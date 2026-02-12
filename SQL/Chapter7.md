@@ -69,7 +69,11 @@ SELECT * FROM book WHERE author='Masumi';
 
 ```
 1. UPDATE book SET age=25 WHERE author='Masumi';
+→ author が Masumi の本の年齢(age)を全部 25 に変更する
+
 2. SELECT * FROM book;
+→ bookテーブルの中身を全部抽出
+
 ```
 
 ```
@@ -78,7 +82,20 @@ SELECT * FROM book WHERE author='Masumi';
   3 | HTML入門    | Hiro   |
   1 | SQL入門     | Masumi |  25
   2 | Flutter入門 | Masumi |  25
-
 ```
 
 ## DALETE
+
+```
+1. DELETE FROM book WHERE author='Masumi';
+→ bookテーブルのauthorがMasumiのレコードを削除する
+
+2. SELECT * FROM book;
+→ bookテーブルの中身を全部抽出
+```
+
+```
+ id |   name   | author | age
+----+----------+--------+-----
+  3 | HTML入門 | Hiro   |
+```
