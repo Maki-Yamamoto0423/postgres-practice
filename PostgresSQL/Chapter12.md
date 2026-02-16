@@ -34,7 +34,7 @@ SELECT * FROM book;
 
 ## BEGIN / COMMIT
 
-トランザクション成功ver.
+トランザクション成功ver.  
 Emmaの年齢を10歳増やし、Olivaの年齢を10歳減らす
 
 ```
