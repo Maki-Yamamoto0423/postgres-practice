@@ -60,12 +60,12 @@ SELECT * FROM book_1 UNION SELECT * FROM book_2;
 
 ```
 
-補足
-PostgreSQLの UNION は内部的に重複除去処理を行ってくれる
-その方法はHash方式とSort方式の２種類がある
-どちらの方式も出力順の保証はしてくれない
+補足  
+PostgreSQLの UNION は内部的に重複除去処理を行ってくれる  
+その方法はHash方式とSort方式の２種類がある  
+どちらの方式も出力順の保証はしてくれない  
 
-SQL入門のデータが重複しているはずなのに消えないのはなぜか？
+SQL入門のデータが重複しているはずなのに消えないのはなぜか？  
 → IDが違うことによって別行として扱われているので、重複していないとみなされていた
 
 ---
@@ -84,7 +84,7 @@ SELECT * FROM book_1 INTERSECT SELECT * FROM book_2;
 (0 rows)
 ```
 
-補足
+補足  
 book_1テーブルとbook_2テーブルに全列一致する行が存在しないため、結果が0件になった
 
 ---
@@ -105,8 +105,8 @@ SELECT * FROM book_1 EXCEPT SELECT * FROM book_2;
   3 | HTML入門    | Hiro   |
 ```
 
-補足
-book_1テーブルの中身がそのまま残る結果になった
+補足  
+book_1テーブルの中身がそのまま残る結果になった  
 並び順がおかしいのは、ORDER BY を書いてないから
 
 ---
@@ -133,8 +133,8 @@ SELECT * FROM book_1 CROSS JOIN book_2;
   3 | HTML入門    | Hiro   |     |  6 | Flutter上級 | Oliva  |  45
 ```
 
-補足
-イメージ
+補足  
+イメージ  
 (book_1の各行) × (book_2の全行)
 
 テストデータを増やしたいときや、全パターンを作成したいときに使う
@@ -155,12 +155,11 @@ SELECT * FROM book_1 INNER JOIN book_2 ON book_1.name = book_2.name;
   1 | SQL入門 | Masumi |  25 |  4 | SQL入門 | Masumi |  25
 ```
 
-補足
-
+補足  
 name が一致した行が1組しかなかったため、その1組だけが結合されて出力された
 
-CROSS JOIN：全組み合わせ
-INNER JOIN：一致した行だけ
+CROSS JOIN：全組み合わせ  
+INNER JOIN：一致した行だけ  
 
 ---
 
@@ -180,15 +179,15 @@ SELECT * FROM book_1 LEFT JOIN book_2 ON book_1.name = book_2.name;
   3 | HTML入門    | Hiro   |     |    |         |        |
 ```
 
-補足
-SQL入門
-→ book_1、book_2どちらにも存在するので結合
+補足  
+SQL入門  
+→ book_1、book_2どちらにも存在するので結合  
 
-Flutter入門
-→ book_2にはないので結果NULL
+Flutter入門  
+→ book_2にはないので結果NULL  
 
-HTML入門
-→ book_2にはないので結果NULL
+HTML入門  
+→ book_2にはないので結果NULL  
 
 ---
 
@@ -208,7 +207,7 @@ SELECT * FROM book_1 RIGHT JOIN book_2 ON book_1.name = book_2.name;
     |         |        |     |  6 | Flutter上級 | Oliva  |  45
 ```
 
-補足
+補足  
 LEFT JOIN と同じ仕組みを、基準テーブルを右にして実行している
 
 ---
@@ -231,7 +230,7 @@ SELECT * FROM book_1 FULL JOIN book_2 ON book_1.name = book_2.name;
     |             |        |     |  5 | GitHub入門2 | Emma   |  22
 ```
 
-補足
+補足  
 LEFT JOIN と RIGHT JOIN を合体したイメージ
 
 FULL JOIN の動作  
