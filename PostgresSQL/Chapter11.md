@@ -234,9 +234,9 @@ SELECT * FROM book_1 FULL JOIN book_2 ON book_1.name = book_2.name;
 補足
 LEFT JOIN と RIGHT JOIN を合体したイメージ
 
-FULL JOIN の動作
-① 一致する行 → 結合
-② 左だけある行 → 右NULL
-③ 右だけある行 → 左NULL
+FULL JOIN の動作  
+① 一致する行 → 結合  
+② 左だけある行 → 右NULL  
+③ 右だけある行 → 左NULL  
 
 ---
